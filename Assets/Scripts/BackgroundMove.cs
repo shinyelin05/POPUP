@@ -19,5 +19,8 @@ public class BackgroundMove : MonoBehaviour
     {
         offset.y += speed * Time.deltaTime ;
         renderer.material.SetTextureOffset("_MainTex", offset);
+
+
     }
 }
+
