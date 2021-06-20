@@ -8,18 +8,11 @@ public class BulletMove : MonoBehaviour
     private float speed = 10f;
 
     private GameManager gameManager = null;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "BorderBullet")
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    private PoolManager poolManager = null;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+
     }
 
     void Update()
@@ -30,19 +23,19 @@ public class BulletMove : MonoBehaviour
 
     private void CheckLimit()
     {
-        if (transform.position.y > gameManager.MaxPosition.y + 2f)
+        if (transform.position.y > gameManager.maxPosition.y + 2f)
         {
             Despawn();
         }
-        if (transform.position.y < gameManager.MinPosition.y - 2f)
+        if (transform.position.y < gameManager.minPosition.y - 2f)
         {
             Despawn();
         }
-        if (transform.position.x > gameManager.MaxPosition.x + 2f)
+        if (transform.position.x > gameManager.maxPosition.x + 2f)
         {
             Despawn();
         }
-        if (transform.position.x < gameManager.MinPosition.x - 2f)
+        if (transform.position.x < gameManager.minPosition.x - 2f)
         {
             Despawn();
         }
@@ -50,7 +43,7 @@ public class BulletMove : MonoBehaviour
 
     public void Despawn()
     {
-        transform.SetParent(gameManager.transform, false);
+        transform.SetParent(gameManager.poolManager.transform, false);
         gameObject.SetActive(false);
     }
 }
