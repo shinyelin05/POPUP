@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1596ccc8924aa0a4c9a94e76b3f7ce1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7692463906808026293, guid: 286de174be273d24e9c47904c1dc7419, type: 3}
+  enemyPrefab: {fileID: 6491069853076426694, guid: 729b9a8464ee78843b53fbda0ebbd849, type: 3}
   life: 3
   score: 0
   highscore: 0
