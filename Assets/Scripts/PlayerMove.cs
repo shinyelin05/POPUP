@@ -66,6 +66,7 @@ public class PlayerMove : MonoBehaviour
             gameManager.life--;
             if(gameManager.life<=0)
             {
+                PlayerPrefs.SetInt("SCORE", gameManager.score);
                 PlayerPrefs.SetInt("HIGHSCORE", gameManager.highscore);
                 SceneManager.LoadScene("GameOver");
             }

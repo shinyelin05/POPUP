@@ -7,8 +7,10 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     private float speed = 10f;
     GameManager gameManager;
+    //Animator anim;
     void Start()
     {
+        //anim = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -26,6 +28,7 @@ public class EnemyMove : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
+            //anim.Play("Popanim");
             Destroy(gameObject);
             Destroy(collision.gameObject);
             gameManager.AddScore();
