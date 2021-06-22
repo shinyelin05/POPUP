@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 9062440677630833277}
   - component: {fileID: -4105131953247824478}
   - component: {fileID: -1398504649059888166}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pop final1 1_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6491069853076426694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79551ff26406cb443a405d3a0afc3d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
 --- !u!50 &-4105131953247824478
 Rigidbody2D:
   serializedVersion: 4

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public int life = 3;
     [SerializeField]
-    private int score = 0;
+    public int score = 0;
     [SerializeField]
     public int highscore = 0;
 
@@ -50,8 +50,12 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    private void UpdateUI()
+    public void UpdateUI()
     {
+        if(score<0)
+        {
+            score = 0;  
+        }
         lifeText.text = string.Format("LIFE : {0}", life);
         scoreText.text = string.Format("SCORE : {0}", score);
         highScoreText.text = string.Format("HIGHSCORE : {0}", highscore);

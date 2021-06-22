@@ -17,6 +17,8 @@ public class EnemyMove : MonoBehaviour
         transform.Translate(Vector2.down * speed * Time.deltaTime);
         if(transform.position.y<gameManager.minPosition.y-2f)
         {
+            gameManager.score -= 10;
+            gameManager.UpdateUI();
             Destroy(gameObject);
         }
     }
