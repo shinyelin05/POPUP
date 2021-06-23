@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject cornEnemy;
+    [SerializeField]
+    private GameObject nachoEnemy;
     public Vector2 maxPosition { get; private set; }
     public Vector2 minPosition { get; private set; }
     public PoolManager poolManager { get; private set; }
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
         poolManager = FindObjectOfType<PoolManager>();
 
         StartCoroutine(EnemySpawn());
-        PlayerPrefs.GetInt("HIGHSCORE", 0);
+        highscore = PlayerPrefs.GetInt("HIGHSCORE", 0);
         UpdateUI();
     }
     public void AddScore()
@@ -63,12 +65,24 @@ public class GameManager : MonoBehaviour
     private IEnumerator EnemySpawn()
     {
         float randomX = 0f;
+        float randomY = 0f;
         float randomDelay = 0f;
         while(true)
         {
+            int randomEnemy = Random.Range(1, 3);
             randomX = Random.Range(-1.5f, 1.5f);
+            randomY = Random.Range(4f, 0f);
             randomDelay = Random.Range(0.1f, 2f);
-            Instantiate(enemyPrefab, new Vector2(randomX, 4f), Quaternion.identity);
+            switch(randomEnemy)
+            {
+                case 1:
+                    Instantiate(cornEnemy, new Vector2(randomX, 4f), Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(nachoEnemy, new Vector2(4f, randomY), Quaternion.identity);
+                    break;
+
+            }
             yield return new WaitForSeconds(randomDelay);
         }
     }

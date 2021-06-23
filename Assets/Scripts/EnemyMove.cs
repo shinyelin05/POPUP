@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 10f;
-    GameManager gameManager;
+    
+    protected GameManager gameManager;
     //Animator anim;
-    void Start()
+    protected virtual void Start()
     {
         //anim = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
@@ -16,7 +15,6 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
         if(transform.position.y<gameManager.minPosition.y-2f)
         {
             gameManager.score -= 10;
@@ -28,7 +26,6 @@ public class EnemyMove : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            //anim.Play("Popanim");
             Destroy(gameObject);
             Destroy(collision.gameObject);
             gameManager.AddScore();
