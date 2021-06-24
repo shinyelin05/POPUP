@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private Text highScoreText = null;
     void Awake()
     {
+        Screen.SetResolution(Screen.width, Screen.width * 1440 / 2960, true);
         maxPosition = new Vector2(1.75f, 4.17f);
         minPosition = new Vector2(-1.75f, -4.17f);
 
