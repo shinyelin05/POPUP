@@ -9,6 +9,24 @@ public class BulletMove : MonoBehaviour
 
     private GameManager gameManager = null;
     private PoolManager poolManager = null;
+
+    private static GameManager instance = null;
+    private static GameManager Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<GameManager>();
+                if(instance == null )
+                {
+                    instance = new GameObject("GameManager").AddComponent<GameManager>();
+                }
+            }
+            return instance;
+        }
+    }
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -23,19 +41,19 @@ public class BulletMove : MonoBehaviour
 
     private void CheckLimit()
     {
-        if (transform.position.y > gameManager.maxPosition.y + 2f)
+        if (transform.position.y > Instance.maxPosition.y + 2f)
         {
             Despawn();
         }
-        if (transform.position.y < gameManager.minPosition.y - 2f)
+        if (transform.position.y < Instance.minPosition.y - 2f)
         {
             Despawn();
         }
-        if (transform.position.x > gameManager.maxPosition.x + 2f)
+        if (transform.position.x > Instance.maxPosition.x + 2f)
         {
             Despawn();
         }
-        if (transform.position.x < gameManager.minPosition.x - 2f)
+        if (transform.position.x < Instance.minPosition.x - 2f)
         {
             Despawn();
         }

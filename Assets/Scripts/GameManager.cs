@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public Vector2 minPosition { get; private set; }
     public PoolManager poolManager { get; private set; }
 
+    private static GameManager instance = null;
+   
+   
+
     [SerializeField]
     public int life = 3;
     [SerializeField]
