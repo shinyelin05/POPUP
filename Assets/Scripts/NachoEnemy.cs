@@ -11,12 +11,15 @@ public class NachoEnemy : EnemyMove
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+
         if (transform.position.x < gameManager.minPosition.x - 2f)
         {
             gameManager.score -= 100;
             gameManager.UpdateUI();
             Destroy(gameObject);
         }
+
+       
     }
 
 }
