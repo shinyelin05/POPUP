@@ -70,6 +70,7 @@ public class PlayerMove : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             gameManager.life--;
+
             if(gameManager.life<=0)
             {
                 PlayerPrefs.SetInt("SCORE", gameManager.score);

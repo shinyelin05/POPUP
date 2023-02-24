@@ -32,8 +32,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text highScoreText = null;
 
+    private int countDown = 3;
+
     void Awake()
     {
+       
+
         Screen.SetResolution(1440, 2960, false);
         maxPosition = new Vector2(2.2f, 4.2f);
         minPosition = new Vector2(-2.2f, -4.2f);
@@ -44,6 +48,13 @@ public class GameManager : MonoBehaviour
         highscore = PlayerPrefs.GetInt("HIGHSCORE", 0);
         UpdateUI();
     }
+
+    void Update()
+    {
+    
+    }
+   
+
     public void AddScore()
     {
         score += 10;

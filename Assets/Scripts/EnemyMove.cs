@@ -21,6 +21,7 @@ public class EnemyMove : MonoBehaviour
         if(transform.position.y<gameManager.minPosition.y-2f)
         {
             gameManager.score -= 10;
+            gameManager.life -= 1;
             gameManager.UpdateUI();
             Destroy(gameObject);
         }
