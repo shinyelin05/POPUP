@@ -6,6 +6,9 @@ public class EnemyMove : MonoBehaviour
 {
     
     protected GameManager gameManager;
+
+    private int enemyCount = 3;
+
     //Animator anim;
     protected virtual void Start()
     {

@@ -7,16 +7,22 @@ using UnityEngine.SceneManagement;
 public class PlayerMove : MonoBehaviour
 {
     private float speed = 10f;
+
     private Vector2 targetPosition = Vector2.zero;
+
     private GameManager gameManager = null;
+
     private PoolManager poolManager = null;
 
     [SerializeField]
-    private float bulletDelay = 0.2f;
+    private float bulletDelay = 1f;
+
     [SerializeField]
     private Transform bulletPosition = null;
+
     [SerializeField]
     private GameObject bulletPrefab = null;
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
