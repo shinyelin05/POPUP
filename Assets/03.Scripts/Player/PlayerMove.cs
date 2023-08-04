@@ -6,22 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
+    [Header("플레이어 관리")]
     private float speed = 10f;
+    private Vector2 targetPosition = Vector2.zero; 
 
-    private Vector2 targetPosition = Vector2.zero;
-
-    private GameManager gameManager = null;
-
-    private PoolManager poolManager = null;
-
+    [Header("플레이어 총알 관리")]
     [SerializeField]
     private float bulletDelay = 1f;
-
     [SerializeField]
     private Transform bulletPosition = null;
-
     [SerializeField]
     private GameObject bulletPrefab = null;
+
+    [Header("관리 매니저")]
+    private GameManager gameManager = null;
+    private PoolManager poolManager = null;
+
+    
 
     void Start()
     {
